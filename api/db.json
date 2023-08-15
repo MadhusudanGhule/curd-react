@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "name": "madan",
+      "email": "madan@123gmil.com",
+      "phone": "87654",
+      "password": "23456",
+      "id": 1
+    }
+  ]
+}

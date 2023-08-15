@@ -1,13 +1,38 @@
-import React, { useContext } from 'react';
-import {UserContext} from './Contex';
+import React, { useContext, useState } from 'react';
+import { UserContext } from './Contex';
 
 const User = () => {
-    const data = useContext(UserContext)
-    // console.log(data)
+    const users = useContext(UserContext)
+    console.log(users)
+    const [serchItem, setSerchItem] = useState('')
+    const [serchRsult, setSerchRsult] = useState([]);
+    function handelSerch() {
+        const filteredUsers = users.filter(user =>
+            user.name.includes(serchItem)
+        );
+        setSerchRsult(filteredUsers);
+
+    }
+console.log(serchRsult)
+
     return (
         <div>
-            <h1>UserComp :{data}</h1>
-            {/* <Detail /> */}
+            <h1>UserComp :{ }</h1>
+            <input type="text"
+                placeholder='serch name'
+                value={serchItem}
+                onChange={(e) => setSerchItem(e.target.value)}
+            />
+            <button onClick={handelSerch}>handelSerch</button>
+
+            {serchRsult.map(user => (
+                <div key={user.id}>
+                    <p>Name: {user.name}</p>
+                    <p>Education: {user.education}</p>
+                    <p>Age: {user.age}</p>
+                </div>
+            ))}
+
         </div>
     );
 }

@@ -11,9 +11,8 @@ const User = () => {
             user.name.includes(serchItem)
         );
         setSerchRsult(filteredUsers);
-
     }
-console.log(serchRsult)
+    console.log(serchRsult)
 
     return (
         <div>
@@ -25,14 +24,22 @@ console.log(serchRsult)
             />
             <button onClick={handelSerch}>handelSerch</button>
 
-            {serchRsult.map(user => (
+            {/* {serchRsult.map(user => (
                 <div key={user.id}>
                     <p>Name: {user.name}</p>
                     <p>Education: {user.education}</p>
                     <p>Age: {user.age}</p>
                 </div>
-            ))}
-
+            ))} */}
+            
+            {serchRsult.map(user=>(
+                <div key={ user.id}>
+                    <p>name: {user.name}</p>
+                    <p>education: {user.education}</p>
+                    <p>edu: {user.age}</p>
+                </div>
+            ))
+            }
         </div>
     );
 }

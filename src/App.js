@@ -37,10 +37,8 @@ function App() {
         <button onClick={() => { setShow(!show) }}>toggel</button>
         {show && <h1> show and hide</h1>}
         {/* <GetApi/> */}
-
         {/* <Update count={count} />
         <button onClick={() => setCount(Math.floor(Math.random() * 100))}>count</button> */}
-
         <div>
           <BrowserRouter>
             <Routes>
